@@ -1,0 +1,55 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+  <ion-footer-bar class="bar-dark">
+      <div class="button-bar">
+        <a class="button icon-left ion-ios-home" href="http://www.tufts.edu" target="_blank" data-icon="star">Tufts Home</a>
+        <a class="button icon-left ion-ios-book" href="http://www.piazza.com" target="_blank" data-icon="grid">Piazza</a>
+      </div>
+  </ion-footer-bar>
+  <!-- Dashboard Tab -->
+  <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
+    <ion-nav-view name="tab-dash"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Chats Tab -->
+  <ion-tab title="Chats" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">
+    <ion-nav-view name="tab-chats"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Account Tab -->
+  <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+    <ion-nav-view name="tab-account"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Schedule Tab -->
+  <ion-tab title="Schedule" icon-off="ion-ios-calendar-outline" icon-on="ion-ios-calendar" href="#/tab/schedule">
+    <ion-nav-view name="tab-schedule"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Classes Tab -->
+  <ion-tab title="Classes" icon-off="ion-ios-star-outline" icon-on="ion-ios-star" href="#/tab/classes">
+    <ion-nav-view name="tab-classes"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Bills Tab -->
+  <ion-tab title="Bills" icon-off="ion-cash" icon-on="ion-cash" href="#/tab/bills">
+    <ion-nav-view name="tab-bills"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Finances Tab -->
+  <ion-tab title="Finances" icon-off="ion-university" icon-on="ion-university" href="#/tab/finances">
+    <ion-nav-view name="tab-finances"></ion-nav-view>
+  </ion-tab>
+  <!-- Enrollment Tab -->
+  <ion-tab title="Enrollment" icon-off="ion-ios-cart-outline" icon-on="ion-ios-cart" href="#/tab/enrollment">
+    <ion-nav-view name="tab-enrollment"></ion-nav-view>
+  </ion-tab>
+
+ <ion-tab title="" icon-off="ion-ios-start-outline" icon-on="ion-ios-start" href="#/tab/results" style="visibility:hidden">
+    <ion-nav-view name="tab-results"></ion-nav-view>
+  </ion-tab>
+</ion-tabs>
