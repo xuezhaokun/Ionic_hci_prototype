@@ -1,1 +1,12 @@
 /* Empty. Add your own CSS if you like */
+.drop-icon{
+  color: red;
+}
+
+.add-icon{
+  color: #33CC00;
+}
+
+.detail-icon{
+	color: #66CCFF;
+}

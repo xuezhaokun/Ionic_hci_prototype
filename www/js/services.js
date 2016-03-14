@@ -49,6 +49,36 @@ angular.module('starter.services', [])
   };
 })
 
+.factory('Enrollment', function(){
+  var items = [{
+    id: 0,
+    name: 'COMP-0015 Data Structure'
+  }, {
+    id: 1,
+    name: 'COMP-0115 Database Systems'
+  }, {
+    id: 2,
+    name: 'COMP-0150 Special Topics: Intrnt Scale Dist Systms'
+  }];
+  return {
+    all: function() {
+      return items;
+    },
+    remove: function(item) {
+      items.splice(items.indexOf(item), 1);
+    },
+    get: function(itemId) {
+      for (var i = 0; i < items.length; i++) {
+        if (items[i].id === parseInt(itemId)) {
+          return items[i];
+        }
+      }
+      return null;
+    }
+  };
+
+})
+
 
 .factory('Results', function() {
   // Might use a resource here that returns a JSON array

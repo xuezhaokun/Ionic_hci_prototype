@@ -31,9 +31,35 @@ angular.module('starter.controllers', [])
     });
   };
 })
+
 .controller('BillsCtrl', function($scope) {})
+
 .controller('FinancesCtrl', function($scope) {})
-.controller('EnrollmentCtrl', function($scope) {})
+
+.controller('EnrollmentCtrl', function($scope, $ionicPopup, Enrollment) {
+  $scope.items = Enrollment.all();
+
+  $scope.remove = function(index, item){
+    var confirmPopup = $ionicPopup.confirm({
+      title: item.name,
+      template: "Are you sure to drop this course?",
+      okText: 'Yes', // String (default: 'OK'). The text of the OK button.
+      okType: 'button-assertive' // String (default: 'button-positive'). The type of the OK button.
+    });
+    
+    confirmPopup.then(function(res) {
+      if (res) {
+          $scope.items.splice(index, 1);
+         console.log('You clicked on "OK" button');
+      } else {
+         console.log('You clicked on "Cancel" button');
+      }
+    });
+    //Enrollment.remove(item);
+    
+    //$scope.items.splice($scope.items.indexOf(item), 1);
+  }
+})
 
 
 
