@@ -17,11 +17,13 @@
       	</ion-item>
     </ion-list>
         	-->
+
+    <span style="color:green">{{addClassConfirmation}}</span>
     <div class="list">
-    	 <a class="item item-icon-left item-icon-right" href="#" ng-repeat="result in results">
+    	<a class="item item-icon-left item-icon-right" href="#" ng-repeat="result in results">
     		<i class="icon detail-icon ion-ios-list" ng-click="showDetails({{result.id}})"></i>
     			{{result.name}}
-   	 		<i class="icon add-icon ion-ios-plus"></i>
+   	 		<i class="icon add-icon ion-ios-plus" ng-click="addClass(result)"></i>
   		</a>
   		<!--
   		<div class="item item-button-right" ng-repeat="result in results">

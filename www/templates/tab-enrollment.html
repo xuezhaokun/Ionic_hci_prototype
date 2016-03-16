@@ -2,12 +2,19 @@
 
   <ion-content class="padding">
 
-    <div class="list">
+    <div ng-if='isLoggedIn()' class="list">
 
     	 <a class="item item-icon-left item-remove-animate" href="#" ng-repeat="item in items">
     		<i class="icon drop-icon ion-ios-close" ng-click="remove($index, item)"></i>
     			{{item.name}}
   		</a>
 	</div>
+    <div ng-if='!isLoggedIn()' class="card">
+      <div class="item item-text-wrap">
+          <p>
+          	Please login first...
+          </p>
+      </div>
+    </div>
   </ion-content>
 </ion-view>

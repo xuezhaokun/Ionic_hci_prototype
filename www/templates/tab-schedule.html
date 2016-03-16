@@ -1,7 +1,7 @@
 <ion-view view-title="Schedule">
 
   <ion-content class="padding">
-    <div class="card">
+    <div ng-if='isLoggedIn()' class="card">
       <div class="item item-text-wrap">
         <h2>Monday 03/14/2016 </h2>
           <p>
@@ -10,7 +10,7 @@
           </p>
       </div>
     </div>
-    <div class="card">
+    <div ng-if='isLoggedIn()' class="card">
       <div class="item item-text-wrap">
         <h2>Tuesday 03/15/2016 </h2>
           <p>
@@ -19,7 +19,7 @@
           </p>
       </div>
     </div>
-    <div class="card">
+    <div ng-if='isLoggedIn()' class="card">
       <div class="item item-text-wrap">
         <h2>Wednesday 03/16/2016 </h2>
           <p>
@@ -28,12 +28,19 @@
           </p>
       </div>
     </div>
-    <div class="card">
+    <div ng-if='isLoggedIn()' class="card">
       <div class="item item-text-wrap">
         <h2>Thursday 03/17/2016 </h2>
           <p>
             COMP-150IDS <br />
             4:30 pm - 5:45 pm
+          </p>
+      </div>
+    </div>
+    <div ng-if='!isLoggedIn()' class="card">
+      <div class="item item-text-wrap">
+          <p>
+            Please login first...
           </p>
       </div>
     </div>

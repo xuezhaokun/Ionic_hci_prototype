@@ -49,6 +49,30 @@ angular.module('starter.services', [])
   };
 })
 
+.factory('Profile', function(){
+  var profile_info = {
+    home_address: "419 Boston Ave. Medford, MA 02155",
+    local_address: "500 Boston Ave. Medford, MA 02155",
+    compus_email: "jsmith01@tufts.edu",
+    other_email: "jsmith01@gmail.com",
+    mobile_phone: "123-456-7890",
+    home_phone: "222-333-4444"
+  };
+  return {
+    getInfo: function(){
+      return profile_info;
+    },
+    updateInfo: function(update_info){
+      profile_info.home_address = update_info.home_address;
+      profile_info.local_address = update_info.local_address;
+      profile_info.compus_email = update_info.compus_email;
+      profile_info.other_email = update_info.other_email;
+      profile_info.mobile_phone = update_info.mobile_phone;
+      profile_info.home_phone = update_info.home_phone;
+    }
+  };
+})
+
 .factory('Enrollment', function(){
   var items = [{
     id: 0,
@@ -56,9 +80,6 @@ angular.module('starter.services', [])
   }, {
     id: 1,
     name: 'COMP-0115 Database Systems'
-  }, {
-    id: 2,
-    name: 'COMP-0150 Special Topics: Intrnt Scale Dist Systms'
   }];
   return {
     all: function() {
@@ -66,6 +87,13 @@ angular.module('starter.services', [])
     },
     remove: function(item) {
       items.splice(items.indexOf(item), 1);
+    },
+    add: function(result){
+      var item = {
+        id: result.id,
+        name: result.name
+      };
+      items.push(item);
     },
     get: function(itemId) {
       for (var i = 0; i < items.length; i++) {
